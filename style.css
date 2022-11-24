@@ -69,7 +69,6 @@ header .side-menu {
 header .button-container {
     float: right;
     margin-right: 1.5rem;
-    margin-top: -.3rem;
     height: 3.5rem;
     width: 3.5rem;
     background-color: var(--lightest-green);
@@ -111,18 +110,43 @@ header .hamb-line::before {
     top: -.5rem;
 }
 
+header .cover {
+    position: absolute;
+    top: 13vh;
+    height: 80vh;
+    width: 100%;
+    z-index: inherit;
+    background-color: rgba(0, 0, 0, 0.281);
+    display: none;
+}
+
+.side-menu:checked ~ .cover {
+    display: block;
+}
+
 
 /* nav */
 
 header .main-nav{
+    margin-top: 1rem;
     background-color: var(--dark-gray);
     width: 100%;
     max-height: 0;
     height: 0;
     overflow: hidden;
     transition: all 350ms ease-out;
-    padding-bottom: 1rem;
-    box-shadow: 0 4px 8px var(--dark-gray) ;
+    box-shadow: 0 4px 8px var(--dark-gray);
+    position: absolute;
+    z-index: 2;
+}
+
+header a {
+    width: 100%;
+    margin-bottom: .4rem;
+}
+
+header a:active {
+    box-shadow: 0px 0px 1px 3px var(--light-green);
 }
 
 header .menu {
@@ -139,7 +163,6 @@ header .menu .menu-box {
     height: 9rem;
     font-size: var(--medium-font_size);
     transition: scale 100ms ease-in;
-    border-bottom: .3rem solid rgb(54, 54, 54);
     color: var(--lightest-green);
     display: block;
 }
@@ -156,7 +179,7 @@ header .menu .menu-box label span {
     user-select: none;
 }
 
-header .menu .menu-box input {
+main .menu-box_item {
     display: none;
 }
 
@@ -220,6 +243,67 @@ header .menu .menu-box label {
 .menu #nosotros {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://placekitten.com/640/360);
     background-size: cover;
+}
+/* main */
+
+main {
+    height: fit-content;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+/* main .cover {
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    background: var(--lightest-green);
+    z-index: 1;
+} */
+
+
+main .container {
+    padding: 1rem 1.5rem;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+main .container img {
+    width: 70%;
+    margin: 1rem 0 2rem 0;
+}
+
+main .container .title {
+    margin-bottom: 1rem;
+}
+
+main .container .color-changer {
+    color: var(--dark-gray);
+}
+
+/* main content display */
+
+main .destinos-content, .comida-content, .suenos-content, .nosotros-content {
+    opacity: 0;
+}
+
+#first-nav-element:checked ~ .destinos-content{
+    opacity: 1;
+}
+
+#second-nav-element:checked ~ .comida-content {
+    opacity: 1;
+}
+
+#third-nav-element:checked ~ .suenos-content {
+    opacity: 1;
+}
+
+#fourth-nav-element:checked ~ .nosotros-content {
+    opacity: 1;
 }
 
 /* Footer */
