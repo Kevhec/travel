@@ -65,6 +65,7 @@ header .side-menu {
 header .button-container {
     float: right;
     margin-right: 1.5rem;
+    margin-top: -.3rem;
     height: 3.5rem;
     width: 3.5rem;
     background-color: var(--lightest-green);
@@ -86,6 +87,7 @@ header .hamb-line {
     background-color: var(--dark-green);
     display: block;
     position: relative;
+    transition: background 0ms 200ms;
 }
 
 header .hamb-line::after, .hamb-line::before {
@@ -94,7 +96,7 @@ header .hamb-line::after, .hamb-line::before {
     width: 100%;
     height: 100%;
     position: absolute;
-    transition: top 200ms ease-in 200ms, rotate 200ms ease-in, background 200ms;
+    transition: top 200ms ease-in 200ms, rotate 200ms ease-in;
 }
 
 header .hamb-line::after {
@@ -120,31 +122,34 @@ header .main-nav{
 }
 
 header .menu {
+    padding-top: 2rem;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: fit-content;
 }
 
 header .menu .menu-box {
-    width: 14rem;
-    height: 14rem;
-    background-color: transparent;
+    width: 100%;
+    height: 9rem;
     color: transparent;
     font-size: var(--medium-font_size);
-    border-radius: 10px;
-    margin: 1rem;
-    transition: all 150ms ease-in;
+    transition: scale 100ms ease-in;
+    display: none;
+    border-bottom: .3rem solid rgb(54, 54, 54);
 }
 
 header .menu .menu-box label {
     width: 100%;
     height: 100%;
-    border-radius: 10px;
     padding-left: 1.5rem;
     padding-top: 2rem;
     cursor: pointer;
+}
+
+header .menu .menu-box label span {
+    user-select: none;
 }
 
 header .menu .menu-box input {
@@ -159,13 +164,14 @@ header .menu .menu-box label {
 /* toggle menu */
 
 .side-menu:checked ~ .main-nav {
-    max-height: 33rem;
-    height: 33rem;
+    max-height: 40rem;
+    height: 40rem;
 }
 
 .side-menu:checked ~ .main-nav .menu-box {
-    background-color: var(--black);
     color: var(--lightest-green);
+    display: block;
+    transition: background 0ms 200ms, display;
 }
 
 .side-menu:checked ~ .button-container .hamb .hamb-line {
@@ -186,5 +192,28 @@ header .menu .menu-box label {
 }
 
 .menu-box_item:checked ~ label {
-    box-shadow: 0px 0px 2px 3px var(--light-green);
+    box-shadow: 0px 0px 2px 4px rgba(116, 156, 119, 0.548);
+}
+
+/* menu box images */
+
+.side-menu:checked ~ .main-nav #destinos {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./pictures/van.jpg);
+    background-size: cover;
+    background-position: 0% 65%;
+}
+
+.side-menu:checked ~ .main-nav #comida {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://placekitten.com/640/360);
+    background-size: cover;
+}
+
+.side-menu:checked ~ .main-nav #suenos {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://placekitten.com/640/360);
+    background-size: cover;
+}
+
+.side-menu:checked ~ .main-nav #nosotros {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://placekitten.com/640/360);
+    background-size: cover;
 }
