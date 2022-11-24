@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html { 
@@ -32,6 +33,7 @@ body {
 a {
     text-decoration: none;
 }
+
 
 ul {
     list-style: none;
@@ -118,7 +120,7 @@ header .main-nav{
     max-height: 0;
     height: 0;
     overflow: hidden;
-    transition: all 300ms ease-out;
+    transition: all 350ms ease-out;
     padding-bottom: 1rem;
     box-shadow: 0 4px 8px var(--dark-gray) ;
 }
@@ -135,11 +137,11 @@ header .menu {
 header .menu .menu-box {
     width: 100%;
     height: 9rem;
-    color: transparent;
     font-size: var(--medium-font_size);
     transition: scale 100ms ease-in;
-    display: none;
     border-bottom: .3rem solid rgb(54, 54, 54);
+    color: var(--lightest-green);
+    display: block;
 }
 
 header .menu .menu-box label {
@@ -173,7 +175,7 @@ header .menu .menu-box label {
 .side-menu:checked ~ .main-nav .menu-box {
     color: var(--lightest-green);
     display: block;
-    transition: background 0ms 200ms, display;
+    transition: background 0ms 200ms;
 }
 
 .side-menu:checked ~ .button-container .hamb .hamb-line {
@@ -197,25 +199,25 @@ header .menu .menu-box label {
     box-shadow: 0px 0px 2px 4px rgba(116, 156, 119, 0.548);
 }
 
-/* menu box images */
+/* menu images */
 
-.side-menu:checked ~ .main-nav #destinos {
+.menu #destinos {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./pictures/van.jpg);
     background-size: cover;
     background-position: 0% 65%;
 }
 
-.side-menu:checked ~ .main-nav #comida {
+.menu #comida {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://placekitten.com/640/360);
     background-size: cover;
 }
 
-.side-menu:checked ~ .main-nav #suenos {
+.menu #suenos {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://placekitten.com/640/360);
     background-size: cover;
 }
 
-.side-menu:checked ~ .main-nav #nosotros {
+.menu #nosotros {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://placekitten.com/640/360);
     background-size: cover;
 }
