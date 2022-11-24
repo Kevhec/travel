@@ -112,19 +112,19 @@ header .hamb-line::before {
     top: -.5rem;
 }
 
-header .cover {
+/* header .cover {
     position: absolute;
     top: 13vh;
-    height: 80vh;
+    height: 100%;
     width: 100%;
     z-index: inherit;
     background-color: rgba(0, 0, 0, 0.281);
     display: none;
-}
+} */
 
-.side-menu:checked ~ .cover {
+/* .side-menu:checked ~ .cover {
     display: block;
-}
+} */
 
 
 /* nav */
