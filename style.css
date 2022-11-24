@@ -20,11 +20,13 @@ html {
     --lightest-green: #D9D9D9;
     --white: #FFF;
     --black: #000;
+    --gray: rgb(48, 48, 48);
 }
 
 body {
     background-color: var(--lightest-green);
     font-family: 'Sono', sans-serif;
+    height: 100vh;
 }
 
 a {
@@ -216,4 +218,30 @@ header .menu .menu-box label {
 .side-menu:checked ~ .main-nav #nosotros {
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://placekitten.com/640/360);
     background-size: cover;
+}
+
+/* Footer */
+
+footer {
+    height: 7vh;
+    width: 100%;
+    background-color: var(--gray);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    color: var(--lightest-green);
+}
+
+footer .socials {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+footer .socials a {
+    color: var(--white);
+    margin: 0 .3rem;
 }
