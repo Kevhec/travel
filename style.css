@@ -229,7 +229,7 @@ header .menu .menu-box label {
 /* menu images */
 
 .menu #destinos {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./pictures/van.jpg);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/van.jpg);
     background-size: cover;
     background-position: 0% 65%;
 }
